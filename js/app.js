@@ -1043,29 +1043,29 @@ const updateProductQuantity = (user, productId, change) => {
 const init = () => {
   switch (window.location.pathname) {
     case "/":
-    case "/index.html":
+    case "/index":
       showProductsList(8);
       break;
-    case "/products.html":
+    case "/products":
       showProductsList();
       filterProducts();
       break;
-    case "/product-info.html":
+    case "/product-info":
       productInfoData();
       break;
-    case "/signup.html":
+    case "/signup":
       initSignup();
       checkIfEmailExists();
       showPassword();
       break;
-    case "/login.html":
+    case "/login":
       initLogin();
       showPassword();
       break;
-    case "/cart.html":
+    case "/cart":
       showCartItems();
       break;
-    case "/forgot-password.html":
+    case "/forgot-password":
       forgotPassword();
       showPassword();
   }
