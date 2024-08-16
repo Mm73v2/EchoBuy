@@ -211,7 +211,7 @@ const showProductsList = (length = productsList.length, category = "all") => {
         "relative"
       );
       newProduct.innerHTML = `
-    <a href="product-info.html?id=${product.id}"
+    <a href="product-info?id=${product.id}"
     class="w-5/6 h-[260px] p-4 overflow-hidden mx-auto aspect-w-16 aspect-h-8 block"
   >
     <img
@@ -469,7 +469,7 @@ const productInfoData = () => {
     >
       Add to cart
     </button>
-    <a href="/index.html" class="text-center min-w-[200px] px-4 py-3.5 border border-gray-800 bg-transparent text-white text-base rounded">Go back</a>
+    <a href="/index" class="text-center min-w-[200px] px-4 py-3.5 border border-gray-800 bg-transparent text-white text-base rounded">Go back</a>
   </div>
 </div>
   `;
@@ -646,7 +646,7 @@ const showDropdownCartItems = () => {
       dropdownCartItem.innerHTML = `
   <a
   class="flex flex-col sm:flex-row items-center"
-  href="cart.html"
+  href="cart"
 >
   <img src="${product.image}" class="w-2/4 shrink-0" />
 
@@ -750,7 +750,7 @@ const initSignup = () => {
         cart: [],
       };
       addUserToLocalStorage(user);
-      window.location.href = "/login.html?registerd_user";
+      window.location.href = "/login?registerd_user";
     } else {
       return;
     }
@@ -792,7 +792,7 @@ const initLogin = () => {
     const password = document.getElementById("password").value;
     const rememberMe = document.getElementById("remember-me");
     const users = getUsers();
-    if (!users) window.location.href = "/signup.html";
+    if (!users) window.location.href = "/signup";
     const userRegistered = users.findIndex(
       (user) => user.email === email && user.password === password
     );
@@ -803,7 +803,7 @@ const initLogin = () => {
       } else {
         storeLoggedInUserToSessionStorage(currentUser);
       }
-      window.location.href = "/index.html";
+      window.location.href = "/index";
     } else {
       const invalidInput = document.getElementById("wrong-info");
       invalidInput.classList.remove("hidden");
@@ -874,7 +874,7 @@ const forgotPassword = () => {
         wrongEmailMessage.classList.add("block");
         return;
       }
-      window.location.href = "login.html?password_changed";
+      window.location.href = "login?password_changed";
     }
   });
   email.addEventListener("focus", () => {
@@ -932,7 +932,7 @@ const logout = () => {
   if (document.getElementById("cart-items-container")) {
     document.getElementById("cart-items-container").innerHTML = "";
   }
-  window.location.href = "/index.html";
+  window.location.href = "/index";
   if (cartIcon) {
     cartIcon.classList.remove("block");
     cartIcon.classList.add("hidden");
