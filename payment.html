@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="e-commerce front-end html css js local-storage products buy sell"
+    />
+    <meta
+      name="description"
+      content="EchoBuy - Your ultimate destination for the latest trends, top brands, and unbeatable deals. Discover a wide range of products, from fashion and electronics to home essentials, all in one place. Shop smart, shop EchoBuy."
+    />
+    <title>EchoBuy</title>
+
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon" />
+    <!-- Css Files -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- Main Header -->
+    <header
+      class="flex shadow-md py-4 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50"
+    >
+      <div
+        class="flex flex-wrap items-center justify-between sm:justify-around gap-5 w-full"
+      >
+        <a
+          class="flex gap-2 items-center text-2xl font-semibold"
+          href="index.html"
+          ><svg
+            id="logo-70"
+            width="78"
+            height="30"
+            viewBox="0 0 78 30"
+            fill="#2563eb"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.5147 0C15.4686 0 12.5473 1.21005 10.3934 3.36396L3.36396 10.3934C1.21005 12.5473 0 15.4686 0 18.5147C0 24.8579 5.14214 30 11.4853 30C14.5314 30 17.4527 28.7899 19.6066 26.636L24.4689 21.7737C24.469 21.7738 24.4689 21.7736 24.4689 21.7737L38.636 7.6066C39.6647 6.57791 41.0599 6 42.5147 6C44.9503 6 47.0152 7.58741 47.7311 9.78407L52.2022 5.31296C50.1625 2.11834 46.586 0 42.5147 0C39.4686 0 36.5473 1.21005 34.3934 3.36396L15.364 22.3934C14.3353 23.4221 12.9401 24 11.4853 24C8.45584 24 6 21.5442 6 18.5147C6 17.0599 6.57791 15.6647 7.6066 14.636L14.636 7.6066C15.6647 6.57791 17.0599 6 18.5147 6C20.9504 6 23.0152 7.58748 23.7311 9.78421L28.2023 5.31307C26.1626 2.1184 22.5861 0 18.5147 0Z"
+              class="ccustom"
+              fill="#2563eb"
+            ></path>
+            <path
+              d="M39.364 22.3934C38.3353 23.4221 36.9401 24 35.4853 24C33.05 24 30.9853 22.413 30.2692 20.2167L25.7982 24.6877C27.838 27.8819 31.4143 30 35.4853 30C38.5314 30 41.4527 28.7899 43.6066 26.636L62.636 7.6066C63.6647 6.57791 65.0599 6 66.5147 6C69.5442 6 72 8.45584 72 11.4853C72 12.9401 71.4221 14.3353 70.3934 15.364L63.364 22.3934C62.3353 23.4221 60.9401 24 59.4853 24C57.0498 24 54.985 22.4127 54.269 20.2162L49.798 24.6873C51.8377 27.8818 55.4141 30 59.4853 30C62.5314 30 65.4527 28.7899 67.6066 26.636L74.636 19.6066C76.7899 17.4527 78 14.5314 78 11.4853C78 5.14214 72.8579 0 66.5147 0C63.4686 0 60.5473 1.21005 58.3934 3.36396L39.364 22.3934Z"
+              class="ccustom"
+              fill="#2563eb"
+            ></path>
+          </svg>
+          EchoBuy
+        </a>
+
+        <div
+          id="collapseMenu"
+          class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50"
+        >
+          <button
+            id="toggleClose"
+            class="lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 fill-black"
+              viewBox="0 0 320.591 320.591"
+            >
+              <path
+                d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                data-original="#000000"
+              ></path>
+              <path
+                d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                data-original="#000000"
+              ></path>
+            </svg>
+          </button>
+
+          <ul
+            class="lg:flex items-center gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+          >
+            <li class="mb-6 hidden max-lg:block">
+              <a
+                class="flex gap-2 items-center text-xl font-semibold"
+                href="index.html"
+                ><svg
+                  id="logo-70"
+                  width="63"
+                  height="30"
+                  viewBox="0 0 78 30"
+                  fill="#2563eb"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18.5147 0C15.4686 0 12.5473 1.21005 10.3934 3.36396L3.36396 10.3934C1.21005 12.5473 0 15.4686 0 18.5147C0 24.8579 5.14214 30 11.4853 30C14.5314 30 17.4527 28.7899 19.6066 26.636L24.4689 21.7737C24.469 21.7738 24.4689 21.7736 24.4689 21.7737L38.636 7.6066C39.6647 6.57791 41.0599 6 42.5147 6C44.9503 6 47.0152 7.58741 47.7311 9.78407L52.2022 5.31296C50.1625 2.11834 46.586 0 42.5147 0C39.4686 0 36.5473 1.21005 34.3934 3.36396L15.364 22.3934C14.3353 23.4221 12.9401 24 11.4853 24C8.45584 24 6 21.5442 6 18.5147C6 17.0599 6.57791 15.6647 7.6066 14.636L14.636 7.6066C15.6647 6.57791 17.0599 6 18.5147 6C20.9504 6 23.0152 7.58748 23.7311 9.78421L28.2023 5.31307C26.1626 2.1184 22.5861 0 18.5147 0Z"
+                    class="ccustom"
+                    fill="#2563eb"
+                  ></path>
+                  <path
+                    d="M39.364 22.3934C38.3353 23.4221 36.9401 24 35.4853 24C33.05 24 30.9853 22.413 30.2692 20.2167L25.7982 24.6877C27.838 27.8819 31.4143 30 35.4853 30C38.5314 30 41.4527 28.7899 43.6066 26.636L62.636 7.6066C63.6647 6.57791 65.0599 6 66.5147 6C69.5442 6 72 8.45584 72 11.4853C72 12.9401 71.4221 14.3353 70.3934 15.364L63.364 22.3934C62.3353 23.4221 60.9401 24 59.4853 24C57.0498 24 54.985 22.4127 54.269 20.2162L49.798 24.6873C51.8377 27.8818 55.4141 30 59.4853 30C62.5314 30 65.4527 28.7899 67.6066 26.636L74.636 19.6066C76.7899 17.4527 78 14.5314 78 11.4853C78 5.14214 72.8579 0 66.5147 0C63.4686 0 60.5473 1.21005 58.3934 3.36396L39.364 22.3934Z"
+                    class="ccustom"
+                    fill="#2563eb"
+                  ></path>
+                </svg>
+                EchoBuy
+              </a>
+            </li>
+
+            <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+              <a
+                href="index.html"
+                class="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
+                >Home</a
+              >
+            </li>
+
+            <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+              <a
+                href="products.html"
+                class="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
+                >Prodcuts</a
+              >
+            </li>
+
+            <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+              <a
+                href="index.html#team"
+                class="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
+                >Team</a
+              >
+            </li>
+
+            <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+              <a
+                href="about.html"
+                class="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
+                >About</a
+              >
+            </li>
+
+            <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+              <a
+                href="contact.html"
+                class="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
+                >Contact</a
+              >
+            </li>
+
+            <li class="max-lg:border-b border-gray-300 max-lg:py-3 px-3">
+              <a
+                href="index.html#Faqs"
+                class="hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]"
+                >Faqs</a
+              >
+            </li>
+
+            <li
+              class="max-lg:border-b border-gray-300 max-lg:py-3 px-3 block sm:hidden"
+              id="loggedin-hidden-side-el"
+            >
+              <a
+                href="login.html"
+                class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+              >
+                Login
+              </a>
+            </li>
+
+            <li
+              class="max-lg:py-3 px-3 block sm:hidden"
+              id="loggedin-hidden-side-el"
+            >
+              <a
+                href="signup.html"
+                class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+              >
+                Sign up
+              </a>
+            </li>
+
+            <li class="max-lg:py-3 px-3 block sm:hidden" id="side-logout">
+              <button
+                href="signup.html"
+                class="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex items-center max-lg:ml-auto space-x-3">
+          <!-- sign up button -->
+          <a
+            id="loggedin-hidden-el"
+            href="signup.html"
+            class="hidden sm:block px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+          >
+            Sign up
+          </a>
+          <!-- login button -->
+          <a
+            id="loggedin-hidden-el"
+            href="login.html"
+            class="hidden sm:block px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+          >
+            Login
+          </a>
+
+          <!-- dropdown cart -->
+          <div
+            class="relative font-[sans-serif] w-max mx-auto hidden"
+            id="cart"
+          >
+            <button
+              type="button"
+              id="shopping-cart-toggle"
+              class="flex items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                width="35"
+                height="35"
+                fill="#0000ff"
+                viewBox="0 0 256 256"
+                xml:space="preserve"
+              >
+                <defs></defs>
+                <g
+                  style="
+                    stroke: none;
+                    stroke-width: 0;
+                    stroke-dasharray: none;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 10;
+                    fill: rgb(37, 99, 235);
+                    fill-rule: nonzero;
+                    opacity: 1;
+                  "
+                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+                >
+                  <path
+                    d="M 73.713 65.44 H 27.689 c -3.566 0 -6.377 -2.578 -6.686 -6.13 c -0.21 -2.426 0.807 -4.605 2.592 -5.939 L 16.381 21.07 c -0.199 -0.889 0.017 -1.819 0.586 -2.53 s 1.431 -1.124 2.341 -1.124 H 87 c 0.972 0 1.884 0.471 2.446 1.263 c 0.563 0.792 0.706 1.808 0.386 2.725 l -7.798 22.344 c -1.091 3.13 -3.798 5.429 -7.063 5.999 l -47.389 8.281 c -0.011 0.001 -0.021 0.003 -0.032 0.005 c -0.228 0.04 -0.623 0.126 -0.568 0.759 c 0.056 0.648 0.48 0.648 0.708 0.648 h 46.024 c 1.657 0 3 1.343 3 3 S 75.37 65.44 73.713 65.44 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(37, 99, 235);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <circle
+                    cx="28.25"
+                    cy="75.8"
+                    r="6.5"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(37, 99, 235);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform="  matrix(1 0 0 1 0 0) "
+                  />
+                  <circle
+                    cx="68.28999999999999"
+                    cy="75.8"
+                    r="6.5"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(37, 99, 235);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform="  matrix(1 0 0 1 0 0) "
+                  />
+                  <path
+                    d="M 19.306 23.417 c -1.374 0 -2.613 -0.95 -2.925 -2.347 l -1.375 -6.155 c -0.554 -2.48 -2.716 -4.212 -5.258 -4.212 H 3 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 6.749 c 5.372 0 9.942 3.662 11.113 8.904 l 1.375 6.155 c 0.361 1.617 -0.657 3.221 -2.274 3.582 C 19.742 23.393 19.522 23.417 19.306 23.417 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(37, 99, 235);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                </g>
+              </svg>
+            </button>
+
+            <div
+              id="shopping-cart-dropdown"
+              class="absolute block right-0 shadow-lg bg-white py-4 z-[1000] min-w-full rounded-lg w-[300px] sm:w-[400px] max-h-[500px] overflow-auto mt-2"
+            >
+              <ul class="divide-y" id="dropdown-cart-container"></ul>
+              <a
+                href="cart.html"
+                class="w-3/4 flex items-center mx-auto justify-center gap-3 mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-base text-white font-semibold rounded-xl"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25px"
+                  height="25px"
+                  fill="#fff"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M164.96 300.004h.024c.02 0 .04-.004.059-.004H437a15.003 15.003 0 0 0 14.422-10.879l60-210a15.003 15.003 0 0 0-2.445-13.152A15.006 15.006 0 0 0 497 60H130.367l-10.722-48.254A15.003 15.003 0 0 0 105 0H15C6.715 0 0 6.715 0 15s6.715 15 15 15h77.969c1.898 8.55 51.312 230.918 54.156 243.71C131.184 280.64 120 296.536 120 315c0 24.812 20.188 45 45 45h272c8.285 0 15-6.715 15-15s-6.715-15-15-15H165c-8.27 0-15-6.73-15-15 0-8.258 6.707-14.977 14.96-14.996zM477.114 90l-51.43 180H177.032l-40-180zM150 405c0 24.813 20.188 45 45 45s45-20.188 45-45-20.188-45-45-45-45 20.188-45 45zm45-15c8.27 0 15 6.73 15 15s-6.73 15-15 15-15-6.73-15-15 6.73-15 15-15zm167 15c0 24.813 20.188 45 45 45s45-20.188 45-45-20.188-45-45-45-45 20.188-45 45zm45-15c8.27 0 15 6.73 15 15s-6.73 15-15 15-15-6.73-15-15 6.73-15 15-15zm0 0"
+                    data-original="#000000"
+                  ></path>
+                </svg>
+                Check out
+              </a>
+            </div>
+          </div>
+          <!-- =================== -->
+          <a href="#" class="hidden" id="cart"> </a>
+
+          <!-- logout button -->
+          <button
+            id="logout"
+            href="#"
+            class="hidden px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#007bff]"
+          >
+            Logout
+          </button>
+
+          <!-- toggle side navbar button -->
+          <button id="toggleOpen" class="lg:hidden">
+            <svg
+              class="w-7 h-7"
+              fill="#000"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- End Main Header -->
+
+    <!-- Payment -->
+    <section class="font-sans my-10 bg-white p-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center">
+          <h2
+            class="text-3xl font-extrabold text-gray-800 inline-block border-b-[3px] border-gray-800 pb-1"
+          >
+            Checkout
+          </h2>
+        </div>
+
+        <div class="mt-12">
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <h3 class="text-3xl font-bold text-gray-300">01</h3>
+              <h3 class="text-xl font-bold text-gray-800 mt-1">
+                Personal Details
+              </h3>
+            </div>
+
+            <div class="md:col-span-2">
+              <form>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="number"
+                      placeholder="Phone number"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mt-12">
+            <div>
+              <h3 class="text-3xl font-bold text-gray-300">02</h3>
+              <h3 class="text-xl font-bold text-gray-800 mt-1">
+                Shopping Address
+              </h3>
+            </div>
+
+            <div class="md:col-span-2">
+              <form>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Street address"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="City"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="State"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="number"
+                      placeholder="Zip Code"
+                      class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4 mt-12">
+            <div>
+              <h3 class="text-3xl font-bold text-gray-300">03</h3>
+              <h3 class="text-xl font-bold text-gray-800 mt-1">
+                Payment method
+              </h3>
+            </div>
+
+            <div class="md:col-span-2">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="flex items-center">
+                  <input
+                    name="card"
+                    type="radio"
+                    class="w-5 h-5 cursor-pointer"
+                    id="card"
+                    checked
+                  />
+                  <label for="card" class="ml-4 flex gap-2 cursor-pointer">
+                    <img
+                      src="https://readymadeui.com/images/visa.webp"
+                      class="w-12"
+                      alt="card1"
+                    />
+                    <img
+                      src="https://readymadeui.com/images/american-express.webp"
+                      class="w-12"
+                      alt="card2"
+                    />
+                    <img
+                      src="https://readymadeui.com/images/master.webp"
+                      class="w-12"
+                      alt="card3"
+                    />
+                  </label>
+                </div>
+
+                <div class="flex items-center">
+                  <input
+                    name="card"
+                    type="radio"
+                    class="w-5 h-5 cursor-pointer"
+                    id="paypal"
+                  />
+                  <label for="paypal" class="ml-4 flex gap-2 cursor-pointer">
+                    <img
+                      src="https://readymadeui.com/images/paypal.webp"
+                      class="w-20"
+                      alt="paypalCard"
+                    />
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-4 gap-4 mt-4">
+                <div class="col-span-2">
+                  <input
+                    type="number"
+                    placeholder="Card number"
+                    class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="EXP."
+                    class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="CVV"
+                    class="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-end gap-4 mt-12">
+            <button
+              type="button"
+              class="px-6 py-3 text-sm font-semibold tracking-wide bg-transparent border-2 text-gray-800 rounded-md hover:bg-gray-100"
+            >
+              Pay later
+            </button>
+            <button
+              type="button"
+              class="px-6 py-3 text-sm font-semibold tracking-wide bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
+              Pay now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Payment -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-5 font-sans tracking-wide">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-10 py-8"
+      >
+        <div>
+          <h4 class="text-lg font-semibold mb-6 text-white">About Us</h4>
+          <p class="text-gray-400 text-base">
+            At EchoBuy, we believe that shopping should be an experience, not
+            just a transaction. We are dedicated to bringing you the latest
+            trends, high-quality products, and exceptional customer service, all
+            in one convenient platform.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-6 text-white">Services</h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                href="about.html"
+                class="text-gray-400 hover:text-white text-base"
+                >Order Tracking</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="text-gray-400 hover:text-white text-base"
+                >Shipping & Delivery</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="text-gray-400 hover:text-white text-base"
+                >Returns & Exchanges</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="text-gray-400 hover:text-white text-base"
+                >Payment Methods</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h4 class="text-lg font-semibold mb-6 text-white">Contact Us</h4>
+          <p class="text-gray-400 text-base">123 Main Street</p>
+          <p class="text-gray-400 text-base">Cairo, Maady, Egypt</p>
+          <p class="text-gray-400 text-base">contact@example.com</p>
+          <p class="text-gray-400 text-base">+20 0102 664 890</p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-6 text-white">Follow Us</h4>
+
+          <ul class="flex flex-wrap gap-x-5 gap-4">
+            <li>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                class="text-xl"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline w-6 h-6"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="#1877f2"
+                    d="M512 256c0 127.78-93.62 233.69-216 252.89V330h59.65L367 256h-71v-48.02c0-20.25 9.92-39.98 41.72-39.98H370v-63s-29.3-5-57.31-5c-58.47 0-96.69 35.44-96.69 99.6V256h-65v74h65v178.89C93.62 489.69 0 383.78 0 256 0 114.62 114.62 0 256 0s256 114.62 256 256z"
+                    data-original="#1877f2"
+                  />
+                  <path
+                    fill="#fff"
+                    d="M355.65 330 367 256h-71v-48.021c0-20.245 9.918-39.979 41.719-39.979H370v-63s-29.296-5-57.305-5C254.219 100 216 135.44 216 199.6V256h-65v74h65v178.889c13.034 2.045 26.392 3.111 40 3.111s26.966-1.066 40-3.111V330z"
+                    data-original="#ffffff"
+                  />
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                class="text-xl"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline w-6 h-6"
+                  viewBox="0 0 176 176"
+                >
+                  <g data-name="Layer 2">
+                    <rect
+                      width="176"
+                      height="176"
+                      fill="#0077b5"
+                      data-original="#0077b5"
+                      rx="24"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M63.4 48a15 15 0 1 1-15-15 15 15 0 0 1 15 15zM60 73v66.27a3.71 3.71 0 0 1-3.71 3.73H40.48a3.71 3.71 0 0 1-3.72-3.72V73a3.72 3.72 0 0 1 3.72-3.72h15.81A3.72 3.72 0 0 1 60 73zm82.64 34.5v32.08a3.41 3.41 0 0 1-3.42 3.42h-17a3.41 3.41 0 0 1-3.42-3.42v-31.09c0-4.64 1.36-20.32-12.13-20.32-10.45 0-12.58 10.73-13 15.55v35.86A3.42 3.42 0 0 1 90.3 143H73.88a3.41 3.41 0 0 1-3.41-3.42V72.71a3.41 3.41 0 0 1 3.41-3.42H90.3a3.42 3.42 0 0 1 3.42 3.42v5.78c3.88-5.82 9.63-10.31 21.9-10.31 27.18 0 27.02 25.38 27.02 39.32z"
+                      data-original="#ffffff"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                class="text-xl"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <linearGradient
+                    id="a"
+                    x1="-37.106"
+                    x2="-26.555"
+                    y1="-72.705"
+                    y2="-84.047"
+                    gradientTransform="matrix(0 -1.982 -1.844 0 -132.522 -51.077)"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0" stop-color="#fd5" />
+                    <stop offset=".5" stop-color="#ff543e" />
+                    <stop offset="1" stop-color="#c837ab" />
+                  </linearGradient>
+                  <path
+                    fill="url(#a)"
+                    d="M1.5 1.633C-.386 3.592 0 5.673 0 11.995c0 5.25-.916 10.513 3.878 11.752 1.497.385 14.761.385 16.256-.002 1.996-.515 3.62-2.134 3.842-4.957.031-.394.031-13.185-.001-13.587-.236-3.007-2.087-4.74-4.526-5.091C18.89.029 18.778.005 15.91 0 5.737.005 3.507-.448 1.5 1.633z"
+                    data-original="url(#a)"
+                  />
+                  <path
+                    fill="#fff"
+                    d="M11.998 3.139c-3.631 0-7.079-.323-8.396 3.057-.544 1.396-.465 3.209-.465 5.805 0 2.278-.073 4.419.465 5.804 1.314 3.382 4.79 3.058 8.394 3.058 3.477 0 7.062.362 8.395-3.058.545-1.41.465-3.196.465-5.804 0-3.462.191-5.697-1.488-7.375-1.7-1.7-3.999-1.487-7.374-1.487zm-.794 1.597c7.574-.012 8.538-.854 8.006 10.843-.189 4.137-3.339 3.683-7.211 3.683-7.06 0-7.263-.202-7.263-7.265 0-7.145.56-7.257 6.468-7.263zm5.524 1.471a1.063 1.063 0 1 0 0 2.126 1.063 1.063 0 0 0 0-2.126zm-4.73 1.243a4.55 4.55 0 1 0 .001 9.101 4.55 4.55 0 0 0-.001-9.101zm0 1.597c3.905 0 3.91 5.908 0 5.908-3.904 0-3.91-5.908 0-5.908z"
+                    data-original="#ffffff"
+                  /></svg
+              ></a>
+            </li>
+
+            <li>
+              <a href="https://x.com" target="_blank" class="text-xl">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline w-6 h-6"
+                  viewBox="0 0 1227 1227"
+                >
+                  <path
+                    d="M613.5 0C274.685 0 0 274.685 0 613.5S274.685 1227 613.5 1227 1227 952.315 1227 613.5 952.315 0 613.5 0z"
+                    data-original="#000000"
+                  />
+                  <path
+                    fill="#fff"
+                    d="m680.617 557.98 262.632-305.288h-62.235L652.97 517.77 470.833 252.692H260.759l275.427 400.844-275.427 320.142h62.239l240.82-279.931 192.35 279.931h210.074L680.601 557.98zM345.423 299.545h95.595l440.024 629.411h-95.595z"
+                    data-original="#ffffff"
+                  /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 p-5 mt-12">
+        <p class="text-gray-400 text-base text-center">
+          © EchoBuy. All rights reserved. Designed And Coded By
+          <span class="text-blue-600 font-semibold">Mohamed Abobakr</span>
+        </p>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
